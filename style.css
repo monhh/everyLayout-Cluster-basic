@@ -17,6 +17,20 @@
     --s3: clamp(1.95rem,1.61rem + 1.7vw,2.83rem);
     --s4: clamp(2.44rem,1.83rem + 3.04vw,4rem);
     --s5: clamp(3.05rem,2.04rem + 5.07vw,5.65rem);
+
+    --space-xs: clamp(0.4375rem, 0.42rem + 0.10vw, 0.5rem);
+    --space-s: clamp(0.875rem, 0.83rem + 0.20vw, 1rem);
+    --space-m: clamp(1.3125rem, 1.25rem + 0.29vw, 1.5rem);
+    --space-l: clamp(2.1875rem, 2.09rem + 0.49vw, 2.5rem);
+    --space-xl: clamp(3.0625rem, 2.92rem + 0.69vw, 3.5rem);
+    --space-2xl: clamp(3.5rem, 3.34rem + 0.78vw, 4rem);
+    --space-3xl: clamp(4.375rem, 4.17rem + 0.98vw, 5rem);
+    --space-4xl: clamp(6.5625rem, 6.26rem + 1.47vw, 7.5rem);
+    --space-xs-l: clamp(0.4375rem, -0.23rem + 3.24vw, 2.5rem);
+    --space-m-l: clamp(1.3125rem, 0.93rem + 1.86vw, 2.5rem);
+    --space-2xl-4xl: clamp(3.5rem, 2.21rem + 6.27vw, 7.5rem);
+
+    --gutter: var(--space-m-l);
 }
 
 body {
@@ -58,12 +72,12 @@ Can be any acceptable flexbox alignment value.
 
     /* ↓ Set the space/gap */
     /* gap: var(--space, 1rem); */ /* org */
-    gap: var(--s3, 1rem); /* mod */
+    gap: var(--gutter, var(--space-m));
 
     /* ↓ Choose your justification (flex-start is default) */
-    justify-content: center;
+    justify-content: var(--cluster-horizontal-alignment, center);
     /* ↓ Choose your alignment (flex-start is default) */
-    align-items: center;
+    align-items: var(--cluster-vertical-alignment, center);
 }
 
 li {
