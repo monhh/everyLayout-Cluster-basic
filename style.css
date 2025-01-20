@@ -1,13 +1,9 @@
 :root {
-
     --color-dark: #050505;
     --color-darkish: #404040;
     --color-lightish: #e6e6e6;
     --color-light: #fafafa;
     --color-mid: grey;
-    
-    background-color: var(--color-dark);
-    color: var(--color-light);
 
     --s-5: clamp(0.33rem,0.39rem + -0.29vw,0.18rem);
     --s-4: clamp(0.41rem,0.47rem + -0.31vw,0.25rem);
@@ -21,15 +17,41 @@
     --s3: clamp(1.95rem,1.61rem + 1.7vw,2.83rem);
     --s4: clamp(2.44rem,1.83rem + 3.04vw,4rem);
     --s5: clamp(3.05rem,2.04rem + 5.07vw,5.65rem);
-
 }
+
+body {
+    background-color: var(--color-dark);
+    color: var(--color-light);
+
+    margin: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+
+    padding: 1rem;
+}
+/*
+CLUSTER
+A layout that lets you distribute items with consitent
+spacing, regardless of their size
+
+CUSTOM PROPERTIES AND CONFIGURATION
+--gutter (var(--space-m)): This defines the space
+between each item.
+
+--cluster-horizontal-alignment (flex-start) How items should align
+horizontally. Can be any acceptable flexbox aligmnent value.
+
+--cluster-vertical-alignment How items should align vertically.
+Can be any acceptable flexbox alignment value.
+*/
+
 
 .cluster {
     /* ↓ Set the Flexbox context */
     display: flex;
 
     /* not necessary */
-    flex-direction: column;
+    /* flex-direction: column; */
 
     /* ↓ Enable wrapping */
     flex-wrap: wrap;
@@ -43,3 +65,12 @@
     /* ↓ Choose your alignment (flex-start is default) */
     align-items: center;
 }
+
+li {
+    padding: 5rem 1rem;
+    text-align: center;
+    list-style-type: none;
+
+    color: var(--color-dark);
+    background-color: var(--color-light);
+  }
